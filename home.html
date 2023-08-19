@@ -9,32 +9,127 @@
     <!-- Firebase configuration script here -->
     <!-- Bootstrap CSS here -->
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
 <body class="bg-light">
-    <div class="container">
-        <h1 class="text-center mt-5">Welcome to the Home Page</h1>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-8">
-                <!-- New Blog Form -->
-                <h2>Post a New Blog</h2>
-                <form id="new-blog-form">
-                    <div class="mb-3">
-                        <label for="blog-title" class="form-label">Blog Title (5-50 characters):</label>
-                        <input type="text" class="form-control" id="blog-title" required minlength="5" maxlength="50">
-                    </div>
-                    <div class="mb-3">
-                        <label for="blog-body" class="form-label">Blog Body (100-3000 characters):</label>
-                        <textarea class="form-control" id="blog-body" required minlength="100" maxlength="3000"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Post</button>
-                </form>
 
-                <!-- Display Existing Blogs -->
-                <h2>Existing Blogs</h2>
-                <div id="blog-list"></div>
-            </div>
+
+    <div class="navigation-bar">
+        <div class="left"  style="margin-left: 25px;">
+          <p class="app-name">Personal Blogging App</p>
         </div>
-    </div>
+        <div class="right">
+    
+    
+           
+    
+    
+              <div  style="margin-left: 25px;">
+                <a href="./profile.html" class="profile" style="color: white;">profile</a>
+              </div>
+    
+              <div style="margin-left: 25px;">
+                <a href="./home.html" class="profile" style="color: white;">All blog</a>
+              </div>  
+              
+              
+              <div style="margin-left: 25px;">
+                <a href="./blog.html" class="profile" style="color: white;">Create blog</a>
+              </div>  
+    
+            <div class="logout2">
+          <a href="./login.html" class="logout" >Logout</a>
+        </div>
+       
+    
+    
+       
+        </div>
+      </div> 
 
+  <div class="dashboard">
+    
+    </div class="btnn">
+<div>
+    <button class="publish-button">
+    <a href="./blog.html" class="logout" >Create Your blog </a>
+</button>
+</div>
+
+
+<div style="margin-top: 50px;">
+    <h1>My blogs</h1>
+<div class="row">
+    <div class="column">
+      <img src="../mini-hackathon/img/1.png" alt="Image 1">
+      <h2>Tapestry of Thoughts</h2>
+      <h6>13-2-2023</h6>
+      <p>Birds sing a melodious chorus, while the gentle rustling of leaves creates a soothing symphony. </p>
+      <div class="button-container">
+        <button class="edit-button" >Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+    <div class="column">
+      <img src="../mini-hackathon/img/3.png" alt="Image 2">
+      <h2>Solace To Those Seeking</h2>
+      <h6>29-05-2023</h6>
+      <p> As the day wanes, hues of orange and pink paint the sky in a breathtaking display, </p>
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+    <div class="column">
+      <img src="../mini-hackathon/img/face.png" alt="Image 3">
+      <h2> Sunlight Filters Through</h2>
+      <h6>23-07-2023</h6>
+      <p>Lves creates a soothing symphony. This serene oasis offers solace to those seeking a .</p>
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="column">
+      <img src="../mini-hackathon/img/secound.png" alt="Image 1">
+      <h1>Tranquil Heart</h1>
+      <h6>19-8-2023</h6>
+      <p>Exploring the Wonders of Nature: A Journey Through Lush Forests and Majestic Mountains</p>
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+    <div class="column">
+      <img src="../mini-hackathon/img/tecno.png" alt="Image 2">
+      <h2>Enchanting, Weaves Its Magic</h2>
+      <h6>19-8-2023</h6>
+      <p> bustling world. Majestic mountains stand tall in the distance, their peaks Sed euismod.</p>
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+    <div class="column">
+      <img src="../mini-hackathon/img/tecno2.png" alt="Image 3">
+      <h2>Unveiling the Tapestry of Thought</h2>
+      <h6>19-8-2023</h6>
+      <p> Tapestry of Thoughts: Chronicles of Life, Creativity, and Exploration.</p>
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <!-- Firebase configuration script here -->
