@@ -1,93 +1,69 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
 <head> 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Page</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <!-- helo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+        }
+        .login-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
+        }
+        .login-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
-<body class="bg-success">
+<body>
     <div class="container">
-        <h1 class="text-center">user login</h1>
-
-        <div class="col-md-8 col-md-offset-2">
-            <br />
-             Email:
-            <input type="email" class="form-control" name="" id="email"><br />
-             Password
-            <input type="password" class="form-control" name="" id="pass" minlength="8"><br />
-            <br />
-            <button type="button" onclick="login()" class="form-control btn btn-primary"> Login </button>
-
-            <div>
-                <div class="mt-3">
-                    <p>you dont have account too  <a href="./signup.html">signup</a></p>
-                  </div>
-            </div>
+        <div class="col-md-6 col-md-offset-3 login-container">
+            <h1 class="login-title">User Login</h1>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" minlength="8" required>
+                </div>
+                <button type="button" onclick="login()" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <a href="./signup.html" class="login-link">Don't have an account? Sign up</a>
         </div>
-       
     </div>
 
-
-    
     <script>
-        // var a = localStorage.getItem("abc");
-
-        // if (a == "save password") {
-        //     window.location.href = "home.html";
-        // }
-
         function login() {
             var email = document.getElementById("email").value;
-            var pass = document.getElementById("pass").value;
+            var password = document.getElementById("password").value;
 
-            var email1 = localStorage.getItem("email1");
-            var pass1 = localStorage.getItem("pass1");
+            var storedEmail = localStorage.getItem("email1");
+            var storedPassword = localStorage.getItem("pass1");
 
-            var isValid = true; // Flag for validation
-
-            // Validate email format
-            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-            if (!email.match(emailRegex)) {
-                isValid = false;
-                alert("Please enter a valid email address.");
-            }
-
-            // Validate password length
-            if (pass.length < 8) {
-                isValid = false;
-                alert("Password must be at least 8 characters long.");
-            }
-
-            if (isValid) {
-                if (email == email1 && pass == pass1) {
-                    localStorage.setItem("code", "secret");
-                    window.location.href = "home.html";
-                } else {
-                    alert("Email and/or password is incorrect");
-                }
+            if (email === storedEmail && password === storedPassword) {
+                localStorage.setItem("code", "secret");
+                window.location.href = "home.html";
+            } else {
+                alert("Email and/or password is incorrect");
             }
         }
     </script>
 
-    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </body>
-
 </html>
